@@ -52,7 +52,7 @@ public class Wh {
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		String httpUrl = "http://apis.baidu.com/apistore/weatherservice/recentweathers";
-		String httpArg = "cityname=长乐";
+		String httpArg = "cityid=101180801";
 		String jsonResult = request(httpUrl, httpArg);
 		JSONObject jsonObject = JSON.parseObject(jsonResult);
 		jsonObject = jsonObject.getJSONObject("retData");
@@ -61,10 +61,11 @@ public class Wh {
 		System.out.println(jsonObject1);
 		JSONObject jsonObject2 = JSONObject.parseObject(list.get(0).toString());
 		System.out.println(jsonObject2);
+		System.out.println(jsonObject1.get("curTemp"));
 
+		//System.out.println(jsonResult);
+		 //System.out.println(jsonObject);
 		System.out.println(jsonResult);
-		// System.out.println(jsonObject);
-		System.out.println(jsonResult + "\u6c38\u5ddd");
 	}
 
 }
